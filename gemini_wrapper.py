@@ -6,7 +6,7 @@ import google.generativeai as genai
 class GeminiWrapper:
     def __init__(self,temp:int=0,keys:list[str]=None,models:list[str]=None):
         if(keys == None):
-            keys = os.environ["GEMINI_KEY_LIST"]
+            keys ="AIzaSyDr_v2E4GPxVfNBySXqS5USaKkLoOIjuWg,AIzaSyA1OZblo-Yc4kdcSIPKmh0tpVW2vDFtXpM"
         if(models == None):
             models = ["gemini-2.0-flash-exp","gemini-1.5-flash"]
             
