@@ -11,7 +11,7 @@ class GeminiWrapper:
             models = ["gemini-2.0-flash-exp","gemini-1.5-flash"]
             
         
-        self.key = random.choice(keys)
+        self.key = random.choice(keys.split(','))
         self.model = random.choice(models)
 
         genai.configure(api_key=self.key)  ##random.choice(keys)
