@@ -11,7 +11,7 @@ class GeminiWrapper:
             models = ["gemini-2.0-flash-exp","gemini-1.5-flash"]
             
         
-        self.key = random.choice(keys.split(','))
+        self.key = random.choice(keys.split(",") )
         self.model = random.choice(models)
 
         genai.configure(api_key=self.key)  ##random.choice(keys)
@@ -36,3 +36,15 @@ class GeminiWrapper:
         gen = genai.Generativegen( model_name=self.model, generation_config=self.generation_config )
         result = gen.generate_content( prompt, generation_config=self.generation_config)
         return result
+
+    def get_results_markdown(self,instructions:str,data:str):
+        prompt = f"{instructions} \r\n#Input Data:\r\n{data}"
+        generation_config = self.generation_config
+        generation_config["response_mime_type"] =  "text/plain"
+        gen = genai.GenerativeModel( model_name=self.model, generation_config=self.generation_config )
+        response_stream = gen.generate_content( prompt, generation_config=self.generation_config,stream=True)
+        full_markdown = ""
+        for chunk in response_stream:
+            full_markdown += chunk.text
+            html = full_markdown
+            yield html 
