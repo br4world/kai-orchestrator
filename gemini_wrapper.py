@@ -14,7 +14,7 @@ class GeminiWrapper:
         self.key = random.choice(keys.split(",") )
         self.model = random.choice(models)
 
-        genai.configure(api_key=self.key)  ##random.choice(keys)
+        genai.configure(api_key=self.key.strip())  ##random.choice(keys)
         self.generation_config = {"temperature": temp,"top_p": 0.95,"top_k": 40, "max_output_tokens": 8192, "response_mime_type": "application/json"}
        
  
