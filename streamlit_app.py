@@ -1,6 +1,7 @@
 import streamlit as st
 from gemini_wrapper import GeminiWrapper
 from prompts import *
+import streamlit.components.v1 as components
 
 def orchestration_page():
     st.title("Kai Orchestration Simulation")
@@ -93,7 +94,8 @@ def duet_search_page():
 
 def impac_call():
     st.title("IMPAC Agent")
-    st.html('<widget-app token="k-ig0wJiomp1DIHSwwX1OJ8Ch5f3VWQldzVKQEVYBGU" id="494"></widget-app><script src="https://widget-agent-prod.s3.ap-south-1.amazonaws.com/widget.js"></script>')
+    html_data = '<widget-app token="k-ig0wJiomp1DIHSwwX1OJ8Ch5f3VWQldzVKQEVYBGU" id="494"></widget-app><script src="https://widget-agent-prod.s3.ap-south-1.amazonaws.com/widget.js"></script>' 
+    st.components.v1.html(html_data, scrolling=True, height=500, width=500)
 
 def process_prompt(prompt_text):
     #Replace with your actual prompt processing logic.
