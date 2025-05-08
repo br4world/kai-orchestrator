@@ -93,9 +93,7 @@ def duet_search_page():
 
 def impac_call():
     st.title("IMPAC Agent")
-    st.write('<widget-app token="k-ig0wJiomp1DIHSwwX1OJ8Ch5f3VWQldzVKQEVYBGU" id="494"></widget-app><script src="https://widget-agent-prod.s3.ap-south-1.amazonaws.com/widget.js"></script>', unsafe_allow_html=True)
-    
-   
+    st.markdown('<widget-app token="k-ig0wJiomp1DIHSwwX1OJ8Ch5f3VWQldzVKQEVYBGU" id="494"></widget-app><script src="https://widget-agent-prod.s3.ap-south-1.amazonaws.com/widget.js"></script>', unsafe_allow_html=True)
 
 def process_prompt(prompt_text):
     #Replace with your actual prompt processing logic.
