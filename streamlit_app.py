@@ -91,10 +91,10 @@ def duet_search_page():
     # Add your DuetSearch logic here
    
 
-def prompt_test_page():
-    st.title("Prompt Test")
-    st.write("This is the Prompt Test page.")
-    # Add your Prompt Test logic here
+def impac_call():
+    st.title("IMPAC Agent")
+    st.markdown('<widget-app token="k-ig0wJiomp1DIHSwwX1OJ8Ch5f3VWQldzVKQEVYBGU" id="494"></widget-app><script src="https://widget-agent-prod.s3.ap-south-1.amazonaws.com/widget.js"></script>', unsafe_allow_html=True)
+    
    
 
 def process_prompt(prompt_text):
@@ -103,7 +103,7 @@ def process_prompt(prompt_text):
 
 def main():
     st.sidebar.title("Navigation")
-    page = st.sidebar.radio("Go to", ("Orchestration", "Thinking Agent", "DuetSearch", "Prompt Test"))
+    page = st.sidebar.radio("Go to", ("Orchestration", "Thinking Agent", "DuetSearch", "IMPAC Agent"))
 
     if page == "Orchestration":
         orchestration_page()
@@ -111,8 +111,8 @@ def main():
         thinking_agent_page()
     elif page == "DuetSearch":
         duet_search_page()
-    elif page == "Prompt Test":
-        prompt_test_page()
+    elif page == "IMPAC Agent":
+        impac_call()
 
 if __name__ == "__main__":
     main()
